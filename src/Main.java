@@ -1,23 +1,32 @@
+//Nombre del paquete creado y nombre de la clase modelo Pelicula una vez movida al paquete
+import com.aluracursos.screenMatch.modelos.Pelicula;
+
 /*
 Juan Alberto Cuevas Juarez
-18/05/2024
+20/05/2024
 Poo
  */
 //Clase primcipal, para hacer test, crear instancias e instaciar objetos
 public class Main {
     public static void main(String[] args) {
-        //crear modelo de tipo de dato Pelicula, se tiene el concepto de encapsulamiento
+        //crear modelo de tipo de dato com.aluracursos.screenMatch.modelos.Pelicula, se tiene el concepto de encapsulamiento
         Pelicula miMovie = new Pelicula(); //crear una instancia donde el compilador reserva espacio de memoria para ese objeto con sus respectivos atributos puedan ser almacenados dentro de ese objeto miMovie
-        miMovie.nombre = "Duro de Matar";
-        miMovie.fechaDeLanzamiento = 2007;
-        miMovie.duracionEnMinutos = 125;
-        //Anteriormente directamente en el main
+        //miMovie.nombre = "Duro de Matar";  esta linea se cambia por setnombre
+        miMovie.setNombre("Duro de Matar"); //setter
+        miMovie.setFechaDeLanzamiento(2007); //setter
+        miMovie.setDuracionEnMinutos(125);   //setter
+        miMovie.setIncluidoEnElPlan(true);  //setter
+        //Anteriormente directamente en el main se imprimia
         //System.out.println("Mi pelicula es: " + miMovie.nombre);
-        //Ahora con metodo mostrarFichaTecnica()
-        miMovie.mostrarFichaTecnica();   //llamada del metodo mostrarFichaTecnica()
+        //Ahora se imprime con metodo mostrarFichaTecnica()
+        miMovie.mostrarFichaTecnica();   //llamada del metodo mostrarFichaTecnica() para ver la informacion de la pelicula
         miMovie.evaluar(7.8);      //llamada del metodo evaluar() donde se agrega calificacion por parte del usuario
         miMovie.evaluar(9.5);      //llamada del metodo evaluar() donde se agrega calificacion por parte del usuario
-        System.out.println(miMovie.getTotalDeLasEvaluaciones()); //Imprime y obtiene el total de las evaluaciones
+        miMovie.evaluar(10);
+        miMovie.evaluar(10);
+        miMovie.evaluar(10);
+        System.out.println(miMovie.getTotalDeLasEvaluaciones()); //Imprime y obtiene el total de las evaluaciones getter
+        System.out.println(miMovie.isIncluidoEnElPlan());   //imprimir el getter si esta incluido en el plan
         System.out.println(miMovie.calcularMedia());    //Imprime por pantalla la Llamada del metodo calcularMedia
         System.out.println(miMovie);  //direccion de memoria unica del objeto
 
@@ -30,16 +39,16 @@ public class Main {
 
 //----------------------------------------------REFACTORIZACION DE CODIGO----------------------------------------------------------------------
         //Instancia 2 para otro objeto
-        //Pelicula otraMovie = new Pelicula();
+        //com.aluracursos.screenMatch.modelos.Pelicula otraMovie = new com.aluracursos.screenMatch.modelos.Pelicula();
         //otraMovie.nombre = "Harry potter piedra filosofal";
         //otraMovie.fechaDeLanzamiento = 2001;
         //otraMovie.duracionEnMinutos = 215;
 
-        //Anteriormente directamente en el main
+        //Anteriormente directamente en el main se imprimia
         //System.out.println("Mi otra Movie es: " + otraMovie.nombre);
         //System.out.println("su fecha de lanzamiento de otra Movie es: " + otraMovie.fechaDeLanzamiento);
         //System.out.println("su duracion de otra Movie es: " + otraMovie.duracionEnMinutos + "minutos");
-        //Ahora con metodo mostrarFichaTecnica()
+        //Ahora se imprime con metodo mostrarFichaTecnica()
         //otraMovie.mostrarFichaTecnica();  //llamada del metodo mostrarFichaTecnica()
         //otraMovie.evaluar(10);
         //otraMovie.evaluar(9.8);
