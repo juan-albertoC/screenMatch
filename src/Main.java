@@ -1,6 +1,7 @@
 //Nombre del paquete creado y nombre de la clase modelo Pelicula una vez movida al paquete
 import com.aluracursos.screenMatch.modelos.Pelicula;
 import com.aluracursos.screenMatch.modelos.Serie;
+import com.aluracursos.screenMatch.calculos.CalculadoraDeTiempo;
 
 /*
 Juan Alberto Cuevas Juarez
@@ -71,6 +72,21 @@ public class Main {
         casaDragon.setEpisodiosPorTemporada(10);
         casaDragon.mostrarFichaTecnica();
         System.out.println(casaDragon.getDuracionEnMinutos());  //imprimir y obtner la duracion total en minutos
+
+        //-----------------Instancia para otra Pelicula-------------------------------------------------
+        Pelicula otraPelicula = new Pelicula();
+        otraPelicula.setNombre("Matrix");
+        otraPelicula.setFechaDeLanzamiento(1998);
+        otraPelicula.setDuracionEnMinutos(180);
+
+        //---------------Llamar al metodo creado de CalculadoraDeTiempo para ello crear una nueva Instancia de dicha clase
+        CalculadoraDeTiempo calculadora = new CalculadoraDeTiempo();
+        calculadora.incluye(miMovie);   //Pelicula
+        calculadora.incluye(casaDragon); //Serie (no reconoce: para ello en CalculadoraDeTiempo.java importar la clase modelo Serie ademas crear metodo void para incluir de tipo Serie)
+        calculadora.incluye(otraPelicula);
+        System.out.println("Tiempo necesario para ver titulos favoritos: " + calculadora.getTiempoTotal() + " minutos");
+
+
 
 
     }
