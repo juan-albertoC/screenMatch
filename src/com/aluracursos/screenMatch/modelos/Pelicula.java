@@ -8,78 +8,18 @@ Juan Alberto Cuevas Juarez
 POO
  */
 //Estructura de un objeto: clases modelo, en este caso clase com.aluracursos.screenMatch.modelos.Pelicula
-public class Pelicula {
-    //--------------------------------------------Atributos: privados para diferentes peliculas u objetos
-    private String nombre;   //se ha agregado un modificador de acceso publico al tipo de dato String nombre
-    private int fechaDeLanzamiento;
-    private int duracionEnMinutos;
-    private boolean incluidoEnElPlan;
-    //nueva regla del negocio: evaluar las peliculas por lo que implica nueva variable
-    private double sumaDeLasEvaluaciones;  //hacer uso de los modificadores de acceso: Private, donde usuario no podra ni ver ni sobreescribir
 
-    private int totalDeLasEvaluaciones;   //Atributo acumulativo de las sumatorias de las evaluaciones donde se incrementa cada vez que una persona evalua
+//herencia con extends es un,es una,
+public class Pelicula extends Titulo {     // en este caso Pelicula hereda o es hija de Titulo
 
-    //---------------------------------Getters: regla de negocio o escenario para obtener
-    public int getTotalDeLasEvaluaciones(){
-        //retornar el tipo de dato (usuario no consigue modificar un valor )
-        return totalDeLasEvaluaciones;
+    private String director;               //Atributo
+
+    public String getDirector() {         //Getter de director
+        return director;
     }
 
-    public String getNombre() {
-        return nombre;
+    public void setDirector(String director) {     //Setter de director
+        this.director = director;
     }
-
-    public int getFechaDeLanzamiento() {
-        return fechaDeLanzamiento;
-    }
-
-    public int getDuracionEnMinutos() {
-        return duracionEnMinutos;
-    }
-
-    public boolean isIncluidoEnElPlan() {
-        return incluidoEnElPlan;
-    }
-    //---------------------------------Setters: Colocar un valor especifico para cada uno de los atributos
-
-    public void setNombre(String nombre) {   //recibe parametro nombre de tipo String
-        this.nombre = nombre;   //this.nombre se refiere al atributo de esta(this) clase, en cambio nombre se refiere al valor que el usuario ingresara
-    }
-
-    public void setFechaDeLanzamiento(int fechaDeLanzamiento) {
-        this.fechaDeLanzamiento = fechaDeLanzamiento;
-    }
-
-    public void setDuracionEnMinutos(int duracionEnMinutos) {
-        this.duracionEnMinutos = duracionEnMinutos;
-    }
-
-    public void setIncluidoEnElPlan(boolean incluidoEnElPlan) {
-        this.incluidoEnElPlan = incluidoEnElPlan;
-    }
-
-    //------------------METODOS VOID SIN RETORNO------------------------------------------------------------------------------------------
-
-    //metodo para mostrar la ficha tecnica o informacion acerca de la pelicula
-    public void mostrarFichaTecnica(){
-
-        System.out.println("El nombre de la pelicula es: " + nombre);
-        System.out.println("La fecha de lanzamiento es: " + fechaDeLanzamiento);
-        System.out.println("La duracion es: " + duracionEnMinutos + "minutos");
-
-    }
-
-    //metodo para evaluar la pelicula segun la nota, espera recibir un dato de tipo double
-    public void evaluar(double nota){
-        sumaDeLasEvaluaciones += nota;
-        totalDeLasEvaluaciones++;  //variable que se incremnta cada vez que una persona evalua una pelicula
-    }
-
-    //------------------METODO CON RETORNO
-    //metodo que retorna un valor de tipo double para calcular la media
-    public double calcularMedia(){
-        return sumaDeLasEvaluaciones / totalDeLasEvaluaciones;
-    }
-
 }
 
