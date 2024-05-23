@@ -57,7 +57,9 @@ public class Titulo {
 
         System.out.println("El nombre de la pelicula es: " + nombre);
         System.out.println("La fecha de lanzamiento es: " + fechaDeLanzamiento);
-        System.out.println("La duracion es: " + duracionEnMinutos + "minutos");
+       // System.out.println("La duracion es: " + duracionEnMinutos + "minutos");   //setter por el usuario
+        //para Pelicula o para Serie
+        System.out.println("La duracion en minutos es: " + getDuracionEnMinutos());  //Se cambia ya que en Main.java daba 0
 
     }
 

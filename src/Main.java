@@ -1,5 +1,6 @@
 //Nombre del paquete creado y nombre de la clase modelo Pelicula una vez movida al paquete
 import com.aluracursos.screenMatch.modelos.Pelicula;
+import com.aluracursos.screenMatch.modelos.Serie;
 
 /*
 Juan Alberto Cuevas Juarez
@@ -60,6 +61,16 @@ public class Main {
         //System.out.println(otraMovie.calcularMedia());
         //System.out.println(otraMovie);  //direccion de memoria unica del objeto
 
+
+        //-----------------Instancia para Serie-------------------------------------------------
+        Serie casaDragon = new Serie();
+        casaDragon.setNombre("La Casa del Dragon");
+        casaDragon.setFechaDeLanzamiento(2022);
+        casaDragon.setTemporadas(1);
+        casaDragon.setMinutosPorEpisodio(50);
+        casaDragon.setEpisodiosPorTemporada(10);
+        casaDragon.mostrarFichaTecnica();
+        System.out.println(casaDragon.getDuracionEnMinutos());  //imprimir y obtner la duracion total en minutos
 
 
     }
