@@ -1,4 +1,6 @@
 //Nombre del paquete creado y nombre de la clase modelo Pelicula una vez movida al paquete
+import com.aluracursos.screenMatch.calculos.FiltrosRecomendacion;
+import com.aluracursos.screenMatch.modelos.Episodio;
 import com.aluracursos.screenMatch.modelos.Pelicula;
 import com.aluracursos.screenMatch.modelos.Serie;
 import com.aluracursos.screenMatch.calculos.CalculadoraDeTiempo;
@@ -85,6 +87,22 @@ public class Main {
         calculadora.incluye(casaDragon); //Serie (no reconoce: para ello en CalculadoraDeTiempo.java importar la clase modelo Serie ademas crear metodo void para incluir de tipo Serie)
         calculadora.incluye(otraPelicula);
         System.out.println("Tiempo necesario para ver titulos favoritos: " + calculadora.getTiempoTotal() + " minutos");
+
+        //Test para filtro de recomendaciones para peliculas ----------Crear una instancia
+        FiltrosRecomendacion filtrosRecomendacion = new FiltrosRecomendacion();
+        filtrosRecomendacion.filtrar(miMovie);
+
+        //Test para filtro de recomendaciones para Episodios ----------Crear una instancia
+        Episodio episodio = new Episodio();
+        episodio.setNumero(1);
+        episodio.setNombre("La casa de  targarian");
+        episodio.setSerie(casaDragon);
+        //calculo para realizar la clasificacion que No aparece ya que no hay getters and setters del atributo privado int totalVisualizaciones de la clase Episodio
+        episodio.setTotalVisualizaciones(50);  //test para 300, 50 visualizaciones
+        filtrosRecomendacion.filtrar(episodio);
+
+
+
 
 
 

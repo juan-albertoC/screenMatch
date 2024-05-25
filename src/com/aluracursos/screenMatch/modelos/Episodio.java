@@ -33,6 +33,14 @@ public class Episodio implements Clasificacion {
         this.serie = serie;
     }
 
+    public int getTotalVisualizaciones() {
+        return totalVisualizaciones;
+    }
+
+    public void setTotalVisualizaciones(int totalVisualizaciones) {
+        this.totalVisualizaciones = totalVisualizaciones;
+    }
+
     @Override
     public int getClasificacion() {
         //regla de negocio diferente
