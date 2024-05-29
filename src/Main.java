@@ -5,6 +5,8 @@ import com.aluracursos.screenMatch.modelos.Pelicula;
 import com.aluracursos.screenMatch.modelos.Serie;
 import com.aluracursos.screenMatch.calculos.CalculadoraDeTiempo;
 
+import java.util.ArrayList;
+
 /*
 Juan Alberto Cuevas Juarez
 20/05/2024
@@ -102,6 +104,26 @@ public class Main {
         filtrosRecomendacion.filtrar(episodio);
 
 
+        //------------------------------------------Nueva Instancia para ejemplo de ArrayList--------------------------------------------------------------------------------------
+        //Pelicula peliculaJuan = new Pelicula(); //Pelicula() es el tipo de dato o el tipo de dato a guardar, donde Pelicula  es la variable de referencia  para peliculaJuan
+
+        var peliculaJuan = new Pelicula();   //var es la inferencia del tipo de dato, java es tipado y no permite el cambio por otro tipo de dato
+        peliculaJuan.setNombre("El señor de los anillos");
+        peliculaJuan.setDuracionEnMinutos(180);
+        peliculaJuan.setFechaDeLanzamiento(2001);
+
+        //crear arrayLists
+         ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();  //ArrayList<Pelicula>  es tipo de dato
+         //agregar un item dentro de esa lista
+        listaDePeliculas.add(peliculaJuan);    //item indice 0
+        listaDePeliculas.add(miMovie);         //item indice 1
+        listaDePeliculas.add(otraPelicula);    //item indice 2
+
+        System.out.println("Tamaño de la lista: " + listaDePeliculas.size());  //Imprimir el tamaño de la lista
+        System.out.println("La primera pelicula es: " + listaDePeliculas.get(0).getNombre());  //obtener un item de esa lista, para ello el indice de una lista comenzara en 0, getNombre() viene de Titulo
+
+        //imprimir lista completa
+        System.out.println(listaDePeliculas);  //referencia al objeto dentro de la memoria
 
 
 
