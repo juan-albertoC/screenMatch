@@ -32,5 +32,10 @@ public class Pelicula extends Titulo implements Clasificacion {     // en este c
         //casteo de int a double
         return (int) (calcularMedia() / 2);   //a partir de aqui se crea regla de negocio  para obtner esa clasificacion
     }
+
+    @Override
+    public String toString() {
+        return "Pelicula: " + this.getNombre() + " (" + getFechaDeLanzamiento() + ")";
+    }
 }
 

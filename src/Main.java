@@ -123,7 +123,9 @@ public class Main {
         System.out.println("La primera pelicula es: " + listaDePeliculas.get(0).getNombre());  //obtener un item de esa lista, para ello el indice de una lista comenzara en 0, getNombre() viene de Titulo
 
         //imprimir lista completa
-        System.out.println(listaDePeliculas);  //referencia al objeto dentro de la memoria
+        System.out.println(listaDePeliculas.toString());  //referencia al objeto dentro de la memoria
+        //System.out.println(listaDePeliculas.get(0).toString());
+        System.out.println(" toString de la pelicula: " + listaDePeliculas.get(0).toString());
 
 
 
