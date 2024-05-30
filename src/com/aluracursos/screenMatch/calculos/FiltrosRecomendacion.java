@@ -1,4 +1,10 @@
-package com.aluracursos.screenMatch.calculos;
+/*
+Juan Alberto Cuevas Juarez
+20/05/2024, 29/05/2024
+POO
+ */
+
+package com.aluracursos.screenMatch.calculos;  //nombre del paquete creado: calculos, que tiene dentro a la clase FiltrosRecomendacion
 
 public class FiltrosRecomendacion {
 

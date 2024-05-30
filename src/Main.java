@@ -1,30 +1,32 @@
-//Nombre del paquete creado y nombre de la clase modelo Pelicula una vez movida al paquete
+/*
+Juan Alberto Cuevas Juarez
+20/05/2024, 29/05/2024
+Poo
+ */
+//Clase principal, para hacer test, crear instancias e instaciar objetos
+
+//Importaciones con nomenclatura que tiene el nombre del paquete creado y el nombre de una clase especifica, se tiene asi el concepto de encapsulamiento
 import com.aluracursos.screenMatch.calculos.FiltrosRecomendacion;
 import com.aluracursos.screenMatch.modelos.Episodio;
 import com.aluracursos.screenMatch.modelos.Pelicula;
 import com.aluracursos.screenMatch.modelos.Serie;
 import com.aluracursos.screenMatch.calculos.CalculadoraDeTiempo;
 
-import java.util.ArrayList;
+import java.util.ArrayList;  //importar para usar ArrayList
 
-/*
-Juan Alberto Cuevas Juarez
-20/05/2024
-Poo
- */
-//Clase primcipal, para hacer test, crear instancias e instaciar objetos
 public class Main {
     public static void main(String[] args) {
-        //crear modelo de tipo de dato com.aluracursos.screenMatch.modelos.Pelicula, se tiene el concepto de encapsulamiento
-        Pelicula miMovie = new Pelicula(); //crear una instancia donde el compilador reserva espacio de memoria para ese objeto con sus respectivos atributos puedan ser almacenados dentro de ese objeto miMovie
+
+        Pelicula miMovie = new Pelicula("Duro de Matar"); //crear una instancia donde el compilador reserva espacio de memoria para ese objeto con sus respectivos atributos puedan ser almacenados dentro de ese objeto miMovie
+
         //miMovie.nombre = "Duro de Matar";  esta linea se cambia por setnombre
-        miMovie.setNombre("Duro de Matar"); //setter
+        //miMovie.setNombre("Duro de Matar"); //setter  que esta linea se cambia por el parametro del constructor
         miMovie.setFechaDeLanzamiento(2007); //setter
         miMovie.setDuracionEnMinutos(125);   //setter
         miMovie.setIncluidoEnElPlan(true);  //setter
-        //Anteriormente directamente en el main se imprimia
-        //System.out.println("Mi pelicula es: " + miMovie.nombre);
-        //Ahora se imprime con metodo mostrarFichaTecnica()
+        //Anteriormente directamente en el main se imprimia:
+              //System.out.println("Mi pelicula es: " + miMovie.nombre);
+        //Ahora se imprime con metodo mostrarFichaTecnica() :
         miMovie.mostrarFichaTecnica();   //llamada del metodo mostrarFichaTecnica() para ver la informacion de la pelicula
         miMovie.evaluar(7.8);      //llamada del metodo evaluar() donde se agrega calificacion por parte del usuario
         miMovie.evaluar(9.5);      //llamada del metodo evaluar() donde se agrega calificacion por parte del usuario
@@ -50,11 +52,11 @@ public class Main {
         //otraMovie.fechaDeLanzamiento = 2001;
         //otraMovie.duracionEnMinutos = 215;
 
-        //Anteriormente directamente en el main se imprimia
-        //System.out.println("Mi otra Movie es: " + otraMovie.nombre);
-        //System.out.println("su fecha de lanzamiento de otra Movie es: " + otraMovie.fechaDeLanzamiento);
-        //System.out.println("su duracion de otra Movie es: " + otraMovie.duracionEnMinutos + "minutos");
-        //Ahora se imprime con metodo mostrarFichaTecnica()
+        //Anteriormente directamente en el main se imprimia:
+               //System.out.println("Mi otra Movie es: " + otraMovie.nombre);
+               //System.out.println("su fecha de lanzamiento de otra Movie es: " + otraMovie.fechaDeLanzamiento);
+               //System.out.println("su duracion de otra Movie es: " + otraMovie.duracionEnMinutos + "minutos");
+        //Ahora se imprime con metodo mostrarFichaTecnica():
         //otraMovie.mostrarFichaTecnica();  //llamada del metodo mostrarFichaTecnica()
         //otraMovie.evaluar(10);
         //otraMovie.evaluar(9.8);
@@ -78,8 +80,8 @@ public class Main {
         System.out.println(casaDragon.getDuracionEnMinutos());  //imprimir y obtner la duracion total en minutos
 
         //-----------------Instancia para otra Pelicula-------------------------------------------------
-        Pelicula otraPelicula = new Pelicula();
-        otraPelicula.setNombre("Matrix");
+        Pelicula otraPelicula = new Pelicula("Matrix");  //se cambia por parametro del constructor nombre
+        //otraPelicula.setNombre("Matrix");                     //se elimina linea
         otraPelicula.setFechaDeLanzamiento(1998);
         otraPelicula.setDuracionEnMinutos(180);
 
@@ -90,11 +92,11 @@ public class Main {
         calculadora.incluye(otraPelicula);
         System.out.println("Tiempo necesario para ver titulos favoritos: " + calculadora.getTiempoTotal() + " minutos");
 
-        //Test para filtro de recomendaciones para peliculas ----------Crear una instancia
+        //Test para filtro de recomendaciones para peliculas ----------Crear una instancia para filtros
         FiltrosRecomendacion filtrosRecomendacion = new FiltrosRecomendacion();
         filtrosRecomendacion.filtrar(miMovie);
 
-        //Test para filtro de recomendaciones para Episodios ----------Crear una instancia
+        //Test para filtro de recomendaciones para Episodios ----------Crear una instancia para episodio
         Episodio episodio = new Episodio();
         episodio.setNumero(1);
         episodio.setNombre("La casa de  targarian");
@@ -105,12 +107,25 @@ public class Main {
 
 
         //------------------------------------------Nueva Instancia para ejemplo de ArrayList--------------------------------------------------------------------------------------
-        //Pelicula peliculaJuan = new Pelicula(); //Pelicula() es el tipo de dato o el tipo de dato a guardar, donde Pelicula  es la variable de referencia  para peliculaJuan
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-        var peliculaJuan = new Pelicula();   //var es la inferencia del tipo de dato, java es tipado y no permite el cambio por otro tipo de dato
-        peliculaJuan.setNombre("El señor de los anillos");
+
+        //----forma 1: Pelicula peliculaJuan = new Pelicula(); //Pelicula() es el tipo de dato o el tipo de dato a guardar, donde Pelicula  es la variable de referencia  para peliculaJuan
+
+        //----forma 2:
+        //var peliculaJuan = new Pelicula();   //var es la inferencia del tipo de dato, java es tipado y no permite el cambio por otro tipo de dato
+        //peliculaJuan.setNombre("El señor de los anillos");
+        //peliculaJuan.setDuracionEnMinutos(180);
+        //peliculaJuan.setFechaDeLanzamiento(2001);
+
+        //----forma 3: -------------------- constructor-------------------
+        var peliculaJuan = new Pelicula("El señor de los anillos"); //iniciar con un nombre ya que es el atributo mas significativo
+        //peliculaJuan.setNombre();  esta linea se elimina
         peliculaJuan.setDuracionEnMinutos(180);
         peliculaJuan.setFechaDeLanzamiento(2001);
+
+
 
         //crear arrayLists
          ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();  //ArrayList<Pelicula>  es tipo de dato
@@ -126,6 +141,14 @@ public class Main {
         System.out.println(listaDePeliculas.toString());  //referencia al objeto dentro de la memoria
         //System.out.println(listaDePeliculas.get(0).toString());
         System.out.println(" toString de la pelicula: " + listaDePeliculas.get(0).toString());
+
+        //test toString
+        peliculaJuan.toString();  //toString hereda de clase madre Object
+
+        //test de Object (super clase o clase madre),
+        Object objeto = peliculaJuan;  //peliculaJuan es de tipo Pelicula y Pelicula hereda es Object
+
+
 
 
 

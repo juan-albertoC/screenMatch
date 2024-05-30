@@ -1,8 +1,14 @@
-package com.aluracursos.screenMatch.modelos;
+/*
+Juan Alberto Cuevas Juarez
+20/05/2024, 29/05/2024
+Poo
+ */
 
-public class Titulo {
+package com.aluracursos.screenMatch.modelos;   //nombre del paquete creado: modelos, que tiene dentro a la clase Titulo
+
+public class Titulo {  //subclase o clase hija que hereda de Object
     //--------------------------------------------Atributos: privados para diferentes peliculas u objetos
-    private String nombre;   //se ha agregado un modificador de acceso publico al tipo de dato String nombre
+    private String nombre;   //se ha agregado un modificador de acceso privado al tipo de dato String nombre
     private int fechaDeLanzamiento;
     private int duracionEnMinutos;
     private boolean incluidoEnElPlan;
