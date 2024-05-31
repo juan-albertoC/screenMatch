@@ -17,11 +17,11 @@ import java.util.ArrayList;  //importar para usar ArrayList
 public class Main {
     public static void main(String[] args) {
 
-        Pelicula miMovie = new Pelicula("Duro de Matar"); //crear una instancia donde el compilador reserva espacio de memoria para ese objeto con sus respectivos atributos puedan ser almacenados dentro de ese objeto miMovie
+        Pelicula miMovie = new Pelicula("Duro de Matar", 2007); //crear una instancia donde el compilador reserva espacio de memoria para ese objeto con sus respectivos atributos puedan ser almacenados dentro de ese objeto miMovie
 
         //miMovie.nombre = "Duro de Matar";  esta linea se cambia por setnombre
         //miMovie.setNombre("Duro de Matar"); //setter  que esta linea se cambia por el parametro del constructor
-        miMovie.setFechaDeLanzamiento(2007); //setter
+        //miMovie.setFechaDeLanzamiento(2007); //setter
         miMovie.setDuracionEnMinutos(125);   //setter
         miMovie.setIncluidoEnElPlan(true);  //setter
         //Anteriormente directamente en el main se imprimia:
@@ -70,9 +70,9 @@ public class Main {
 
 
         //-----------------Instancia para Serie-------------------------------------------------
-        Serie casaDragon = new Serie();
-        casaDragon.setNombre("La Casa del Dragon");
-        casaDragon.setFechaDeLanzamiento(2022);
+        Serie casaDragon = new Serie("La Casa del Dragon", 2022);
+        //casaDragon.setNombre("La Casa del Dragon");
+        //casaDragon.setFechaDeLanzamiento(2022);
         casaDragon.setTemporadas(1);
         casaDragon.setMinutosPorEpisodio(50);
         casaDragon.setEpisodiosPorTemporada(10);
@@ -80,9 +80,9 @@ public class Main {
         System.out.println(casaDragon.getDuracionEnMinutos());  //imprimir y obtner la duracion total en minutos
 
         //-----------------Instancia para otra Pelicula-------------------------------------------------
-        Pelicula otraPelicula = new Pelicula("Matrix");  //se cambia por parametro del constructor nombre
+        Pelicula otraPelicula = new Pelicula("Matrix", 1998);  //se cambia por parametro del constructor nombre
         //otraPelicula.setNombre("Matrix");                     //se elimina linea
-        otraPelicula.setFechaDeLanzamiento(1998);
+        //otraPelicula.setFechaDeLanzamiento(1998);
         otraPelicula.setDuracionEnMinutos(180);
 
         //---------------Llamar al metodo creado de CalculadoraDeTiempo para ello crear una nueva Instancia de dicha clase
@@ -120,14 +120,16 @@ public class Main {
         //peliculaJuan.setFechaDeLanzamiento(2001);
 
         //----forma 3: -------------------- constructor-------------------
-        var peliculaJuan = new Pelicula("El señor de los anillos"); //iniciar con un nombre ya que es el atributo mas significativo
+        var peliculaJuan = new Pelicula("El señor de los anillos", 2001); //iniciar con un nombre ya que es el atributo mas significativo
         //peliculaJuan.setNombre();  esta linea se elimina
+        //peliculaJuan.setFechaDeLanzamiento(2001);
         peliculaJuan.setDuracionEnMinutos(180);
-        peliculaJuan.setFechaDeLanzamiento(2001);
+
 
 
 
         //crear arrayLists
+        //Acotar el arraylist con un integer para el tamaño: performance para sistemas mas complejos segun su diseño de sistemas
          ArrayList<Pelicula> listaDePeliculas = new ArrayList<>();  //ArrayList<Pelicula>  es tipo de dato
          //agregar un item dentro de esa lista
         listaDePeliculas.add(peliculaJuan);    //item indice 0

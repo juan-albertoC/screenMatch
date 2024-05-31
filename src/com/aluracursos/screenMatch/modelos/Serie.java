@@ -14,6 +14,11 @@ public class Serie extends Titulo {    //herencia con extends es un,es una,
     int episodiosPorTemporada;
     int minutosPorEpisodio;
 
+    //-------Constructor----2 atributos parametros------------coincidencia entre constructor de serie y titulo
+    public Serie(String nombre, int fechaDeLanzamiento) {
+        super(nombre, fechaDeLanzamiento);
+    }
+
 
     //getDuracionEnMinutos se incluye para Calcular el tiempo de duracion en minutos ya que Main.java su resultado era 0
     @Override                                 //override es notacion, es una sobrescritura de metodos (metodo original en Titulo y aqui se sobrescribe)

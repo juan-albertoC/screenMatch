@@ -18,9 +18,16 @@ public class Pelicula extends Titulo implements Clasificacion {  //herencia con 
 
     private String director;               //Atributo privado de tipo String
 
-    //constructor sirve para reservar espacio en memmoria por lo tanto colocar los atributos a esa pelicula, asi estos atributos en memoria la computadora pueda trabajar, operar, modificar con ellos con el fin de obtner valores
-    public Pelicula(String nombre) {      //Crear Constructor: no tiene retorno, como parametro recibe un String nombre para colocar varias peliculas
-        this.setNombre(nombre);           //metodo void setNombre de la clase Titulo con parametro nombre
+    //constructor sirve para reservar espacio en memmoria por lo tanto colocar los atributos a esa pelicula, asi estos atributos en memoria la computadora pueda trabajar, operar, modificar con ellos con el fin de obtner valores, validacion de atributos
+    //constructor usa encapsulamineto para mantener sistema acotado,colocar informacion vital por ejemplo conexion base datos: login,password,direccion-ip, o tambien para register_web: email, password
+   // public Pelicula(String nombre) {      //Crear Constructor 1 atributo parametro: no tiene retorno, como parametro recibe un String nombre para colocar varias peliculas
+     //   this.setNombre(nombre);           //metodo void setNombre de la clase Titulo con parametro nombre
+    //}
+
+    //Si no se usa Constructor por defecto estandar de Object,entonces implemnetar constructor para cada una de las subclases
+    //--constructor
+    public Pelicula(String nombre, int fechaDeLanzamiento) {
+        super(nombre, fechaDeLanzamiento);  //super llama al contructor de la clase padre Titulo
     }
 
     public String getDirector() {         //Getter de director

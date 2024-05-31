@@ -17,6 +17,14 @@ public class Titulo {  //subclase o clase hija que hereda de Object
 
     private int totalDeLasEvaluaciones;   //Atributo acumulativo de las sumatorias de las evaluaciones donde se incrementa cada vez que una persona evalua
 
+    //--------------------------------------------Constructor 2 atributos parametros-----------------------
+
+
+    public Titulo(String nombre, int fechaDeLanzamiento) {
+        this.nombre = nombre;
+        this.fechaDeLanzamiento = fechaDeLanzamiento;
+    }
+
     //---------------------------------Getters: regla de negocio o escenario para obtener
     public int getTotalDeLasEvaluaciones(){
         //retornar el tipo de dato (usuario no consigue modificar un valor )
