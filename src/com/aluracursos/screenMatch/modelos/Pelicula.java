@@ -41,7 +41,7 @@ public class Pelicula extends Titulo implements Clasificacion {  //herencia con 
     @Override
     public int getClasificacion() {
         //casteo de int a double
-        return (int) (calcularMedia() / 2);   //a partir de aqui se crea regla de negocio  para obtener esa clasificacion
+        return (int) (calcularMedia() / 2);   //a partir de aqui se crea regla de negocio  para obtener esa clasificacion de 5 estrellas divide  /2 conseguir estrellas
     }
 
     //reescrbir ese toString para tener otro comportamiento dentro de nuestra clase

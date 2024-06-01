@@ -1,4 +1,5 @@
-/*
+
+package com.aluracursos.screenMatch.pMain;/* refactoring direccion de paquete pMain
 Juan Alberto Cuevas Juarez
 20/05/2024, 29/05/2024
 Poo

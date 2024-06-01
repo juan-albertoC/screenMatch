@@ -73,7 +73,7 @@ public class Titulo {  //subclase o clase hija que hereda de Object
         System.out.println("La fecha de lanzamiento es: " + fechaDeLanzamiento);
        // System.out.println("La duracion es: " + duracionEnMinutos + "minutos");   //setter por el usuario
         //para Pelicula o para Serie
-        System.out.println("La duracion en minutos es: " + getDuracionEnMinutos());  //Se cambia ya que en Main.java daba 0
+        System.out.println("La duracion en minutos es: " + getDuracionEnMinutos());  //Se cambia ya que en com.aluracursos.screenMatch.pMain.Main.java daba 0
 
     }
 

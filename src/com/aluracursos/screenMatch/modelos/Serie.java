@@ -20,7 +20,7 @@ public class Serie extends Titulo {    //herencia con extends es un,es una,
     }
 
 
-    //getDuracionEnMinutos se incluye para Calcular el tiempo de duracion en minutos ya que Main.java su resultado era 0
+    //getDuracionEnMinutos se incluye para Calcular el tiempo de duracion en minutos ya que com.aluracursos.screenMatch.pMain.Main.java su resultado era 0
     @Override                                 //override es notacion, es una sobrescritura de metodos (metodo original en Titulo y aqui se sobrescribe)
     public int getDuracionEnMinutos() {       // si en futuro hay cambios en el metodo original por alguna regla de negocio por ejemplo int valor este lo notificara
 
