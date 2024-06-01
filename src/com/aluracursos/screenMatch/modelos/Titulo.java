@@ -6,7 +6,8 @@ Poo
 
 package com.aluracursos.screenMatch.modelos;   //nombre del paquete creado: modelos, que tiene dentro a la clase Titulo
 
-public class Titulo {  //subclase o clase hija que hereda de Object
+//aplicar Logica de Comparacion con implements Comparable <Titulo> e implementar metodo compareTo
+public class Titulo implements Comparable<Titulo>{  //subclase o clase hija que hereda de Object
     //--------------------------------------------Atributos: privados para diferentes peliculas u objetos
     private String nombre;   //se ha agregado un modificador de acceso privado al tipo de dato String nombre
     private int fechaDeLanzamiento;
@@ -87,5 +88,13 @@ public class Titulo {  //subclase o clase hija que hereda de Object
     //metodo que retorna un valor de tipo double para calcular la media
     public double calcularMedia(){
         return sumaDeLasEvaluaciones / totalDeLasEvaluaciones;
+    }
+
+    //Implementacion de metodo compareTo
+    @Override
+    public int compareTo(Titulo otroTitulo) {
+        //delegar logica de orden a los nombres de strings
+
+        return this.getNombre().compareTo(otroTitulo.getNombre());
     }
 }

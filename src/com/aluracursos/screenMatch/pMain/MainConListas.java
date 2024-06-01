@@ -5,6 +5,7 @@ import com.aluracursos.screenMatch.modelos.Serie;
 import com.aluracursos.screenMatch.modelos.Titulo;
 
 import java.util.ArrayList;
+import java.util.Collections;  //coleecciones para ordenar
 
 public class MainConListas {
     public static void main(String[] args) {
@@ -52,6 +53,24 @@ public class MainConListas {
         }
 
 
+        //Ordenar una lista
+        ArrayList<String> listaDeArtistas = new ArrayList<>();
+        listaDeArtistas.add("Penelope Cruz");
+        listaDeArtistas.add("Antonio Banderas");
+        listaDeArtistas.add("Gael Garcia Bernal");
+        System.out.println(listaDeArtistas);  //lista  no ordenada
+
+
+        //coleccion de lista de artistas
+        Collections.sort(listaDeArtistas); //metodo estatico sort sin hacer instancia
+        System.out.println("Lista de artistas ordenada: " + listaDeArtistas);
+
+        //ordenar otra lista, tener una logica de comparacion
+        Collections.sort(lista);  //error titulo no implemta tipo comparado
+        //verificar documentacion de javadoc 17 Sting, java lang String, dentro se tiene a Interface Comparable<T> que compara dos objetos mismo tipo e implemnta un unico metodo y tarea especifica
+
+        //Imprimir lista
+        System.out.println("Lista de titulos ordenados: " + lista);
 
 
     }
