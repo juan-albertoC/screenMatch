@@ -53,4 +53,10 @@ public class Serie extends Titulo {    //herencia con extends es un,es una,
     public void setMinutosPorEpisodio(int minutosPorEpisodio) {
         this.minutosPorEpisodio = minutosPorEpisodio;
     }
+
+    @Override
+    public String toString() {
+        return "Serie: " + this.getNombre() + " (" + this.getFechaDeLanzamiento() + ")";
+
+    }
 }

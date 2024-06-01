@@ -6,6 +6,7 @@ import com.aluracursos.screenMatch.modelos.Titulo;
 
 import java.util.ArrayList;
 import java.util.Collections;  //coleecciones para ordenar
+import java.util.Comparator;
 
 public class MainConListas {
     public static void main(String[] args) {
@@ -53,7 +54,7 @@ public class MainConListas {
         }
 
 
-        //Ordenar una lista
+        //Ordenar una lista por nombres
         ArrayList<String> listaDeArtistas = new ArrayList<>();
         listaDeArtistas.add("Penelope Cruz");
         listaDeArtistas.add("Antonio Banderas");
@@ -61,17 +62,23 @@ public class MainConListas {
         System.out.println(listaDeArtistas);  //lista  no ordenada
 
 
-        //coleccion de lista de artistas
+        //coleccion de lista de artistas, ordenar por nombres
         Collections.sort(listaDeArtistas); //metodo estatico sort sin hacer instancia
         System.out.println("Lista de artistas ordenada: " + listaDeArtistas);
 
-        //ordenar otra lista, tener una logica de comparacion
+        //ordenar otra lista por nombres, tener una logica de comparacion
         Collections.sort(lista);  //error titulo no implemta tipo comparado
         //verificar documentacion de javadoc 17 Sting, java lang String, dentro se tiene a Interface Comparable<T> que compara dos objetos mismo tipo e implemnta un unico metodo y tarea especifica
 
-        //Imprimir lista
+        //Imprimir lista de titulos ordenados por nombres
         System.out.println("Lista de titulos ordenados: " + lista);
 
+       //Ordenar listas por fechas
+        lista.sort(Comparator.comparing(Titulo::getFechaDeLanzamiento));
+        //sort de arraylist, donde sort tiene como parametro un comparator que es una interface, llamando asi un metodo estatico comparing
+        // que  este tiene como parametros para devolver  la fecha para cada titulo que este comparando el comparador con getfechalanzamiento (Lambdas)
+
+        System.out.println("Lista ordenada por fechas: " + lista);
 
     }
 }
