@@ -4,9 +4,12 @@ import com.aluracursos.screenMatch.modelos.Pelicula;
 import com.aluracursos.screenMatch.modelos.Serie;
 import com.aluracursos.screenMatch.modelos.Titulo;
 
+import java.util.LinkedList;
+import java.util.List;        //importacion del paquete java util List
 import java.util.ArrayList;
 import java.util.Collections;  //coleecciones para ordenar
 import java.util.Comparator;
+
 
 public class MainConListas {
     public static void main(String[] args) {
@@ -24,11 +27,18 @@ public class MainConListas {
         //Pelicula p1 = miMovie;   //varaoblr que hace referencia al objeto en la memoria, por lo tanto p1 and miMovie hacen refeencia al mismo objeto pelicula en memoria
 
 
-        //crear arrayLists (Lista de peliculas y series)
+        //----------Crear arrayLists (Lista de peliculas y series) --------------
+        //-----------------------------------------------------------------------
         //Acotar el arraylist con un integer para el tamaño: performance para sistemas mas complejos segun su diseño de sistemas
         //ArrayList<Pelicula> lista = new ArrayList<>();  //ArrayList<Pelicula>  es tipo de dato
         //marcacion de error en lista.add agregar serie para tipo Serie ya que solo hay de tipo Pelicula y no de Serie, en cambio para series y peliculas la super clase en comun es Titulo
-        ArrayList<Titulo> lista = new ArrayList<>();  //ArrayList<Pelicula>  es tipo de dato, donde Titulo hereda de Object,  <> se llama generics
+            //Test experimento opcion 1: si funciona
+        //ArrayList<Titulo> lista = new ArrayList<>();  //ArrayList<Pelicula>  es tipo de dato, donde Titulo hereda de Object,  <> se llama generics
+            //Test experimento opcion 2: si funciona
+        //List<Titulo> lista = new ArrayList<>(); //Buena practica de programacion  programar orientado a las interfaces
+            //Test experimento opcion 3: si funciona
+        List<Titulo> lista = new LinkedList<>();         //listas enlazadas, se tiene que se referencia al objeto lista con la interface List que es abstrato
+
         //agregar un item dentro de esa lista
         lista.add(peliculaJuan);    //item indice 0
         lista.add(miMovie);         //item indice 1
