@@ -5,12 +5,20 @@ Poo
  */
 
 package com.aluracursos.screenMatch.modelos;   //nombre del paquete creado: modelos, que tiene dentro a la clase Titulo
+import com.google.gson.annotations.SerializedName; //importar una annotations
 
 //aplicar Logica de Comparacion con implements Comparable <Titulo> e implementar metodo compareTo
 public class Titulo implements Comparable<Titulo>{  //subclase o clase hija que hereda de Object
+    //aparece null como no encontrado el titulo por ello hacer conversion entre json y nuestro objeto
+    @SerializedName("Title") //convertir esa estructura de datos a un String
     //--------------------------------------------Atributos: privados para diferentes peliculas u objetos
     private String nombre;   //se ha agregado un modificador de acceso privado al tipo de dato String nombre
+    //-------------------------------------------------
+    @SerializedName("Year")  // annotation que aparece en el json llamada Year
+    //-------------------------------------------------
     private int fechaDeLanzamiento;
+    //--------------------------------------------
+
     private int duracionEnMinutos;
     private boolean incluidoEnElPlan;
     //nueva regla del negocio: evaluar las peliculas por lo que implica nueva variable
@@ -96,5 +104,11 @@ public class Titulo implements Comparable<Titulo>{  //subclase o clase hija que 
         //delegar logica de orden a los nombres de strings
 
         return this.getNombre().compareTo(otroTitulo.getNombre());
+    }
+    //Implementacion de metodo toString para comprender que se ve dentro del titulo
+    @Override
+    public String toString() {
+        return "nombre='" + nombre + '\'' +
+                ", fechaDeLanzamiento=" + fechaDeLanzamiento;
     }
 }
