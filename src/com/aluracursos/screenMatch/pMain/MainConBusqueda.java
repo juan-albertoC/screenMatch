@@ -8,7 +8,10 @@ Implementar comunicacion Cliente-Servidor con Web Service
 package com.aluracursos.screenMatch.pMain;
 
 import com.aluracursos.screenMatch.modelos.Titulo;
+import com.aluracursos.screenMatch.modelos.TituloOmdb;
+import com.google.gson.FieldNamingPolicy;
 import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 
 import java.io.IOException;        //excepciones
 import java.net.URI;               //metodo o parametro
@@ -47,11 +50,26 @@ public class MainConBusqueda {
         //gestores de paquetes en Java: Maven,Gradle,Ant. En Node: NPM. En Python: PIP. Asi descargar dependencias
         //gson:
         //estructura de proyecto -> modules, dependencias -> ubicacion de file JAR
-        Gson gson = new Gson(); //crear objeto gson de Gson
-        Titulo miTitulo = gson.fromJson(json, Titulo.class); //crear objeto miTitulo para transformar de un json a una clase de tipo Titulo
+
+        //Gson gson = new Gson(); //crear objeto gson de Gson
+        //mecanismo de Gson para comprender valores del Json son en mayuscula converttir en minusculas como buena pratica
+        //documentacion de Gson -> json field naming support -> setFieldNamingPolicy del patron de diseño Builder usar politica de upper camel case
+        Gson gson = new GsonBuilder()
+                .setFieldNamingPolicy(FieldNamingPolicy.UPPER_CAMEL_CASE)
+                .create();
+
+        //Titulo miTitulo = gson.fromJson(json, Titulo.class); //crear objeto miTitulo para transformar de un json a una clase de tipo Titulo
         //System.out.println("Titulo: "+miTitulo.getNombre()); //aparece Titulo: null que es como cero de una referencia
         //aparece null como no encontrado el titulo por ello hacer conversion entre json y nuestro objeto, ir a clase Titulo y hacer modificaciones
+        //System.out.println(miTitulo);
+
+        TituloOmdb miTituloOmdb = gson.fromJson(json, TituloOmdb.class);  //de json a un Record TituloOmdb
+        System.out.println(miTituloOmdb);                                 //imprime objeto
+        // opcion poco viable Titulo miTitulo = new Titulo(miTituloOmdb.title(), miTituloOmdb.year());
+        Titulo miTitulo = new Titulo(miTituloOmdb);    //pasar datos de miTituloOmdb a Titulo,   creacion de objeto miTitulo de tipo Titulo llama al nuevo constructor 3 de Titulo cuyos atributos son nombre, fechaDeLanzamiento, duracionEnMinutos
         System.out.println(miTitulo);
+
+
 
 
 

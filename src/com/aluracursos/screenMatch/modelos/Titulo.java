@@ -33,6 +33,14 @@ public class Titulo implements Comparable<Titulo>{  //subclase o clase hija que 
         this.nombre = nombre;
         this.fechaDeLanzamiento = fechaDeLanzamiento;
     }
+    //----------------------------------------------Constructor 3------------------------
+    //Nuevo constructor que recibe parametro un miTituloOmdb de tipo TituloOmdb, sea capaz de  compreder pasar datos TituloOmdb a Titulo
+    public Titulo(TituloOmdb miTituloOmdb) {
+        this.nombre = miTituloOmdb.title();
+        this.fechaDeLanzamiento = Integer.valueOf(miTituloOmdb.year());//casting de un valueOf
+        this.duracionEnMinutos = Integer.valueOf(miTituloOmdb.runtime().substring(0,2)); //error convertir int a string valueof 60 min, propiedad de los strings para recortar valores con primeros 3 digitos y convertir a String
+
+    }
 
     //---------------------------------Getters: regla de negocio o escenario para obtener
     public int getTotalDeLasEvaluaciones(){
@@ -109,6 +117,7 @@ public class Titulo implements Comparable<Titulo>{  //subclase o clase hija que 
     @Override
     public String toString() {
         return "nombre='" + nombre + '\'' +
-                ", fechaDeLanzamiento=" + fechaDeLanzamiento;
+                ", fechaDeLanzamiento=" + fechaDeLanzamiento+
+                ", duracion="+duracionEnMinutos;
     }
 }
