@@ -5,6 +5,7 @@ Poo
  */
 
 package com.aluracursos.screenMatch.modelos;   //nombre del paquete creado: modelos, que tiene dentro a la clase Titulo
+import com.aluracursos.screenMatch.excepcion.ErrorEnConversionDeDuracionException;
 import com.google.gson.annotations.SerializedName; //importar una annotations
 
 //aplicar Logica de Comparacion con implements Comparable <Titulo> e implementar metodo compareTo
@@ -38,8 +39,11 @@ public class Titulo implements Comparable<Titulo>{  //subclase o clase hija que 
     public Titulo(TituloOmdb miTituloOmdb) {
         this.nombre = miTituloOmdb.title();
         this.fechaDeLanzamiento = Integer.valueOf(miTituloOmdb.year());//casting de un valueOf
-        this.duracionEnMinutos = Integer.valueOf(miTituloOmdb.runtime().substring(0,2)); //error convertir int a string valueof 60 min, propiedad de los strings para recortar valores con primeros 3 digitos y convertir a String
-
+        if(miTituloOmdb.runtime().contains("N/A")){    //crear mi propia exception
+            throw new ErrorEnConversionDeDuracionException("No pude convertir la duracion, porque contiene un N/A ");
+        }
+        this.duracionEnMinutos = Integer.valueOf(miTituloOmdb.runtime().substring(0,3).replace(" ", "")); //error convertir int a string valueof 60 min, propiedad de los strings para recortar valores con primeros 3 digitos y convertir a String
+                                                                                       //replace ya que matrix daba error 60 min, remplazar ese espacio por nada
     }
 
     //---------------------------------Getters: regla de negocio o escenario para obtener
