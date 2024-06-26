@@ -1,6 +1,7 @@
 /*
 Juan Alberto Cuevas Juarez
 20/05/2024, 29/05/2024
+25/06/2024
 Poo
  */
 
@@ -11,11 +12,11 @@ import com.google.gson.annotations.SerializedName; //importar una annotations
 //aplicar Logica de Comparacion con implements Comparable <Titulo> e implementar metodo compareTo
 public class Titulo implements Comparable<Titulo>{  //subclase o clase hija que hereda de Object
     //aparece null como no encontrado el titulo por ello hacer conversion entre json y nuestro objeto
-    @SerializedName("Title") //convertir esa estructura de datos a un String
+    //@SerializedName("Title") //convertir esa estructura de datos a un String
     //--------------------------------------------Atributos: privados para diferentes peliculas u objetos
     private String nombre;   //se ha agregado un modificador de acceso privado al tipo de dato String nombre
     //-------------------------------------------------
-    @SerializedName("Year")  // annotation que aparece en el json llamada Year
+    //@SerializedName("Year")  // annotation que aparece en el json llamada Year
     //-------------------------------------------------
     private int fechaDeLanzamiento;
     //--------------------------------------------
@@ -120,8 +121,8 @@ public class Titulo implements Comparable<Titulo>{  //subclase o clase hija que 
     //Implementacion de metodo toString para comprender que se ve dentro del titulo
     @Override
     public String toString() {
-        return "nombre='" + nombre + '\'' +
+        return "(nombre=" + nombre +
                 ", fechaDeLanzamiento=" + fechaDeLanzamiento+
-                ", duracion="+duracionEnMinutos;
+                ", duracion="+duracionEnMinutos+")";
     }
 }
